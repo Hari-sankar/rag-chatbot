@@ -9,3 +9,11 @@ bcrypt
 redis
 uvicorn
 psycopg2-binary
+
+
+langchain
+pinecone-client
+langchain-pinecone
+langchain-openai
+pypdf
+transformers

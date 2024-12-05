@@ -10,7 +10,7 @@ from app.db.migration import migration
 from app.routes.health_routes import router as health_router
 from app.routes.user_routes import router as user_router
 from app.routes.auth_routes import router as auth_router
-# from app.routes.chat_routes import router as chat_router
+from app.routes.chatbot_routes import router as chatbot_router
 
 # Loading Config
 settings = Settings()
@@ -73,7 +73,7 @@ async def middleware(request: Request, call_next):
 app.include_router(health_router, prefix="/health", tags=["Health"])
 app.include_router(user_router, prefix="/user", tags=["Users"])
 app.include_router(auth_router, prefix="/auth", tags=["Auth"])
-# app.include_router(chat_router, prefix="/chat", tags=["ChatGPT"])
+app.include_router(chatbot_router, prefix="/chatbot", tags=["Chatbot"])
 
 # Custom Exception Handler
 @app.exception_handler(HTTPException)
